@@ -5,10 +5,10 @@ public class Student {
     private String name;
     private Random random;
 
-    public Student(int student_Id, String name, Random random) {
+    public Student(int student_Id, String name) {
         Student_Id = student_Id;
         this.name = name;
-        this.random = random;
+        this.random = new Random();
     }
 
     public int getStudent_Id() {
