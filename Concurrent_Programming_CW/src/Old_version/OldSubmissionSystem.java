@@ -1,3 +1,5 @@
+package Old_version;
+
 public class OldSubmissionSystem {
     private int numberOfStudents;
     private SubmissionStats stats;
