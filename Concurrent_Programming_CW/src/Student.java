@@ -6,7 +6,7 @@ public class Student {
     private Random random;
 
     public Student(int student_Id, String name) {
-        Student_Id = student_Id;
+        this.Student_Id = student_Id;
         this.name = name;
         this.random = new Random();
     }
