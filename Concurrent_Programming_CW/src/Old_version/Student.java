@@ -1,3 +1,5 @@
+package Old_version;
+
 import java.util.Random;
 
 public class Student {
@@ -25,14 +27,6 @@ public class Student {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Random getRandom() {
-        return random;
-    }
-
-    public void setRandom(Random random) {
-        this.random = random;
     }
 
     public String submitExam() throws InterruptedException {
