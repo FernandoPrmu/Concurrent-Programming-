@@ -32,7 +32,7 @@ public class NewSubmissionSystem {
                     } else {
                         stats.recordFailure();
                     }
-                    //System.out.println(result);
+                    System.out.println(result);
                 } catch (Exception e) {
                     stats.recordFailure();
                     System.err.println("Error for Student " + student_ID + ": " + e.getMessage());
