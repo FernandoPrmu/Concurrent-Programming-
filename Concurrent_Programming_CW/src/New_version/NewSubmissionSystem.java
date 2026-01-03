@@ -27,7 +27,7 @@ public class NewSubmissionSystem {
                 try {
                     Student student = new Student(student_ID,"csss");
                     String result = student.submitExam();
-                    if (result.equals("Successfully Submitted")) {
+                    if (result.equals(student_ID + " " + "Student successfully Submitted")) {
                         stats.recordSuccess();
                     } else {
                         stats.recordFailure();
