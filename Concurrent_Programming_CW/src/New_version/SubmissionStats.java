@@ -58,11 +58,12 @@ public class SubmissionStats {
     }
 
     public void display(){
-        System.out.println("Total Submission : " + totalSubmission());
-        System.out.println("Successful Submissions : " + successSubmission());
-        System.out.println("Failed Submissions : " + failSubmission());
-        System.out.println("Total Time : " + formattedTotalTime());
+        System.out.println("\n====================== SUBMISSION RESULTS ======================");
+        System.out.println("\nTotal Submission                     : " + totalSubmission());
+        System.out.println("Successful Submissions               : " + successSubmission());
+        System.out.println("Failed Submissions                   : " + failSubmission());
+        System.out.println("Total Time                           : " + formattedTotalTime());
         System.out.println("Percentage of Successful Submissions : " + successPercentage() + " %");
-
+        System.out.println("\n================================================================");
     }
 }

@@ -33,10 +33,10 @@ public class Student {
         int processTime = random.nextInt(100);
         Thread.sleep(processTime);
         int resultTime = random.nextInt(100);
-        if(resultTime > 10){
-            return "Successfully Submitted";
+        if(resultTime > 5){
+            return student_ID + " " + "Student successfully Submitted";
         }else{
-            return "Failure Timeout";
+            return student_ID + " "+"Student failure Timeout";
         }
     }
 }
