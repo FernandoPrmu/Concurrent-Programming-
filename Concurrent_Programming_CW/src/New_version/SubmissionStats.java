@@ -11,19 +11,19 @@ public class SubmissionStats {
     private int total;
 
     public void recordSuccess(){
-        successful.incrementAndGet();
+        successful.incrementAndGet(); // Increase from one success counter
     }
 
     public void recordFailure(){
-        failed.incrementAndGet();
+        failed.incrementAndGet(); // Increase from one failure counter
     }
 
     public void setStartTime() {
-        startTime.set(System.currentTimeMillis());
+        startTime.set(System.currentTimeMillis()); // Record system start time
     }
 
     public void setEndTime() {
-        endTime.set(System.currentTimeMillis());
+        endTime.set(System.currentTimeMillis()); // Record system end time
     }
 
     public long totalTime(){
@@ -36,7 +36,7 @@ public class SubmissionStats {
     }
 
     public double successPercentage(){
-        return (((double) successful.get() / total) * 100);
+        return (((double) successful.get() / total) * 100); // Calculate success percentage
     }
 
     public int successSubmission(){
@@ -47,6 +47,7 @@ public class SubmissionStats {
         return failed.get();
     }
 
+    // Convert time into HH:MM:SS format
     public String formattedTotalTime() {
         long millis = totalTime();
 
@@ -57,6 +58,7 @@ public class SubmissionStats {
         return String.format("%02d:%02d:%02d (hh:mm:ss)", hours, minutes, seconds);
     }
 
+    // Display final submission report
     public void display(){
         System.out.println("\n====================== SUBMISSION RESULTS ======================");
         System.out.println("\nTotal Submission                     : " + totalSubmission());

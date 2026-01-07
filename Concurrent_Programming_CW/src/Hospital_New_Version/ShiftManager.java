@@ -19,12 +19,21 @@ public class ShiftManager {
 
     public void startShift(String name) {
         System.out.println("\n--- " + name + " SHIFT STARTED ---");
+
+        // Thread pool that runs consultants
         pool = Executors.newFixedThreadPool(3);
         consultants.clear();
 
-        consultants.add(new Consultant("Dr A", Speciality.PAEDIATRICIAN, patientQueue, stats));
-        consultants.add(new Consultant("Dr B", Speciality.SURGEON, patientQueue, stats));
-        consultants.add(new Consultant("Dr C", Speciality.CARDIOLOGIST, patientQueue, stats));
+        // Assign consultants depending on shift
+        if ("DAY".equals(name)) {
+            consultants.add(new Consultant("Dr A", Speciality.PAEDIATRICIAN, patientQueue, stats));
+            consultants.add(new Consultant("Dr B", Speciality.SURGEON, patientQueue, stats));
+            consultants.add(new Consultant("Dr C", Speciality.CARDIOLOGIST, patientQueue, stats));
+        } else if ("NIGHT".equals(name)) {
+            consultants.add(new Consultant("Dr D", Speciality.PAEDIATRICIAN, patientQueue, stats));
+            consultants.add(new Consultant("Dr E", Speciality.SURGEON, patientQueue, stats));
+            consultants.add(new Consultant("Dr F", Speciality.CARDIOLOGIST, patientQueue, stats));
+        }
 
         for (Consultant c : consultants) {
             pool.execute(c);
@@ -35,7 +44,7 @@ public class ShiftManager {
         for (Consultant c : consultants) {
             c.stopConsultant();
         }
-        pool.shutdownNow();
+        pool.shutdownNow(); // force stop
     }
 }
 

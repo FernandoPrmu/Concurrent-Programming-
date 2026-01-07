@@ -30,9 +30,9 @@ public class Student {
     }
 
     public String submitExam() throws InterruptedException {
-        int processTime = random.nextInt(100);
+        int processTime = random.nextInt(100);  // Simulate processing delay (0–99 ms)
         Thread.sleep(processTime);
-        int resultTime = random.nextInt(100);
+        int resultTime = random.nextInt(100); // Random chance of success or failure
         if(resultTime > 5){
             return student_ID + " " + "Student successfully Submitted";
         }else{
