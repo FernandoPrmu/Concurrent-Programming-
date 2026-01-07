@@ -17,10 +17,10 @@ public class NewSubmissionSystem {
     }
 
     public void processSubmissions(){
-        stats.setStartTime();
+        stats.setStartTime();   // Record start time of the system
 
-        ExecutorService executor = Executors.newFixedThreadPool(poolSize);
-        CountDownLatch latch = new CountDownLatch(numberOfStudents);
+        ExecutorService executor = Executors.newFixedThreadPool(poolSize);  // Create a fixed-size thread pool
+        CountDownLatch latch = new CountDownLatch(numberOfStudents); // Create CountDownLatch for main thread waits until all students finish
         for (int i = 0; i < numberOfStudents; i++) {
             final int student_ID = i;
             executor.submit(() -> {
@@ -37,19 +37,19 @@ public class NewSubmissionSystem {
                     stats.recordFailure();
                     System.err.println("Error for Student " + student_ID + ": " + e.getMessage());
                 } finally {
-                    latch.countDown();
+                    latch.countDown(); // Decrease latch count after task completion
                 }
             });
         }
 
         try {
-            latch.await();
+            latch.await(); // Wait until all student submissions are completed
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             System.err.println("System process was interrupted.");
         }
-        executor.shutdown();
-        stats.setEndTime();
+        executor.shutdown(); // Shut down the thread pool
+        stats.setEndTime(); // Record end time
         stats.display();
     }
 }
