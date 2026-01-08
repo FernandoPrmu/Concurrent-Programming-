@@ -30,7 +30,7 @@ public class ShiftManager {
             consultants.add(new Consultant("Dr Pramuditha", Speciality.SURGEON, patientQueue, stats));
             consultants.add(new Consultant("Dr Sandaru", Speciality.CARDIOLOGIST, patientQueue, stats));
         } else if ("NIGHT".equals(name)) {
-            consultants.add(new Consultant("Dr Aruna", Speciality.PAEDIATRICIAN, patientQueue, stats));
+            consultants.add(new Consultant("Dr Damith", Speciality.PAEDIATRICIAN, patientQueue, stats));
             consultants.add(new Consultant("Dr Gayan", Speciality.SURGEON, patientQueue, stats));
             consultants.add(new Consultant("Dr Dilini", Speciality.CARDIOLOGIST, patientQueue, stats));
         }
