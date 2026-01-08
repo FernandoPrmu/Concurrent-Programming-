@@ -26,13 +26,13 @@ public class ShiftManager {
 
         // Assign consultants depending on shift
         if ("DAY".equals(name)) {
-            consultants.add(new Consultant("Dr A", Speciality.PAEDIATRICIAN, patientQueue, stats));
-            consultants.add(new Consultant("Dr B", Speciality.SURGEON, patientQueue, stats));
-            consultants.add(new Consultant("Dr C", Speciality.CARDIOLOGIST, patientQueue, stats));
+            consultants.add(new Consultant("Dr Prathibha", Speciality.PAEDIATRICIAN, patientQueue, stats));
+            consultants.add(new Consultant("Dr Pramuditha", Speciality.SURGEON, patientQueue, stats));
+            consultants.add(new Consultant("Dr Sandaru", Speciality.CARDIOLOGIST, patientQueue, stats));
         } else if ("NIGHT".equals(name)) {
-            consultants.add(new Consultant("Dr D", Speciality.PAEDIATRICIAN, patientQueue, stats));
-            consultants.add(new Consultant("Dr E", Speciality.SURGEON, patientQueue, stats));
-            consultants.add(new Consultant("Dr F", Speciality.CARDIOLOGIST, patientQueue, stats));
+            consultants.add(new Consultant("Dr Damith", Speciality.PAEDIATRICIAN, patientQueue, stats));
+            consultants.add(new Consultant("Dr Gayan", Speciality.SURGEON, patientQueue, stats));
+            consultants.add(new Consultant("Dr Dilini", Speciality.CARDIOLOGIST, patientQueue, stats));
         }
 
         for (Consultant c : consultants) {
